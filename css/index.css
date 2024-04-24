@@ -70,6 +70,7 @@ body{
     background-position: center;
     background-attachment: fixed;
     background-size:cover;
+    
 
 }
 
@@ -368,6 +369,24 @@ original y cambiará su color al valor de la propiedad personalizada `--color-pr
     transform: scale(1.1);
     color: var(--color-primary) ;
 
+}
+
+.About-h3{
+
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: end;
+    color: var(--text-secondary);
+    margin: 3rem 10% 2rem 0;
+
+    transition: all .5s ease-in-out;
+
+}
+
+.About-h3:hover{
+    transform: scale(1.1);
+    color: var(--color-primary);
 }
 
 .About-p{
@@ -905,7 +924,7 @@ general del usuario. */
 
     }
 
-    .About-p , .About-h2 , .About-p--secondary {
+    .About-p , .About-h2 , .About-p--secondary , .About-h3 {
         margin: 1rem auto;
         text-align: start;
 
@@ -919,6 +938,8 @@ general del usuario. */
         margin-left: 20%;
 
     }
+
+    
     .Projects-h2{
         font-size: 2.5em;
 
