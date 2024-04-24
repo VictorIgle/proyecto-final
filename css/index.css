@@ -65,7 +65,7 @@ Tambien se le ha dado una transicion suave al hacer scroll cuando se haga click 
 body{
     font-family: "Kanit", sans-serif;
     scroll-behavior: smooth;
-    background-image: url(/assets/dark-metal-texture2.webp);
+    background-image: url(/proyecto-final/assets/dark-metal-texture2.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
