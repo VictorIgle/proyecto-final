@@ -1,0 +1,960 @@
+*{
+    margin: 0;
+    padding: 0;
+    border:0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+h1 , h2 , h3 , h4 , h5 , h6{
+    font-size: inherit;
+    font-weight: inherit;
+}
+a{
+    color:inherit;
+    text-decoration: none;
+    display: block;
+}
+p a{
+    display: inline;
+}
+img , picture , video , iframe , svg {
+    display: block;
+    width: 100%;
+    height: initial;
+}
+svg{
+    fill: currentColor;
+}
+html{
+    scroll-behavior: smooth;
+}
+form , input , label , select , option , textarea , button{
+    font-size: inherit;
+    font-family: inherit;
+    display: block;
+    line-height: inherit;
+    background-color: transparent;
+}
+:root{
+    font-size: 100%;
+
+    /* Color */
+    --color-primary: white; /*Color utilizado en los hover*/
+    --text-primary: #f3bc25; /*Color principal para los textos de la pagina*/
+    --text-color-terciary: #000; /*Color terciario de texto*/
+    --text-secondary: rgb(248, 122, 4); /*Color secundario de texto*/
+    --bg-color: rgb(34, 36, 36);/*Color principal de fondo de la pagina*/
+    --bg-color-secondary: linear-gradient(0deg, rgba(236,193,63,1) 0%, rgba(240,126,12,1) 100%); /*Color secundario de fondo en la pagina*/
+    --border-color: rgb(175, 172, 172); /*Color para los bordes*/
+
+
+    /* Tipografías */
+    --font-primary : "Kanit", sans-serif; /*Fuente de texto principal*/
+    /* Espacios */
+    --margin-primary: 0 0 1rem;
+
+    
+}
+
+/*Se le han aplicado al body una serie de propiedades para que una imagen de fondo ocupe toda la pantalla de modo fijo y que no se repita
+Tambien se le ha dado una transicion suave al hacer scroll cuando se haga click en los enlaces del Nav*/
+
+body{
+    font-family: "Kanit", sans-serif;
+    scroll-behavior: smooth;
+    background-image: url(/assets/dark-metal-texture2.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size:cover;
+
+}
+
+ /* Inicio del header */
+
+
+/* 
+-Header
+-Header-h2
+-Header-svg
+-Header-btn
+-Header-svg
+-Header-nav.isActive
+-Header-li
+-Header-a
+
+La clase CSS `.Header` le da estilo a un elemento de encabezado en una página web. Tiene una anchura del 100% y un flex flow wrap para que se realice mejor el modo responsive
+a la hora de hacer el menu de la version movil. Tiene un position fixed para mantener la cabecera siempre visible al hacer scroll en la pagina. Tiene un svg con 2rem de ancho para 
+hacerlo mas visible. El boton que contiene al SVG tieen un display none para que no sea visible en las pantallas mas anchas, tipo Ordenador o Tablet. */
+
+.Header{
+    width:100%;
+    background:var(--bg-color-secondary);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    
+    box-shadow: 0 0 2.5rem 0 rgba(0, 0, 0, .9);
+    
+}
+
+.Header-h2{
+    font-size: 2em;
+    font-weight: 700;
+
+}
+
+.Header-svg{
+    cursor: pointer;
+    border: 2px solid;
+    border-radius: 15%;
+
+}
+
+.Header-btn{
+    display: none;
+
+}
+
+.Header-svg{
+    width: 2rem;
+
+}
+
+.Header-nav.isActive{
+    margin: 2rem 0 ;
+    display: block;
+    height: 50vh;
+    
+}
+
+.Header-ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+
+.Header-li{
+    margin: 0 .5rem;
+
+}
+
+.Header-a{
+    font-size: 1.5em;
+    font-weight: 700;
+
+    transition: all .5s ease-in-out;
+
+}
+
+/* Cuando se pasa el cursor sobre el elemento, cambiará el color del texto al valor de
+la propiedad personalizada "--color-primary" y escalará el elemento en un factor de 1,1 utilizando
+la propiedad de transformación. */
+
+.Header-a:hover{
+    color: var(--color-primary);
+    transform: scale(1.1);
+
+}
+
+/*Finder del Header*/
+
+
+
+
+
+/*Inicio del Home*/
+
+/*
+-Section-h1
+-Section-span
+-Section-span:hover
+-Section-p
+-Section-image
+-Section-img
+-Section-img:hover
+
+Configurando la propiedad de visualización en flex, lo que permite que la sección se muestre como un
+contenedor flexible. La propiedad flex-flow está configurada en "ajustar columna", lo que significa
+que los elementos flexibles se distribuirán en la dirección de una columna y se ajustarán a la
+siguiente línea si no hay suficiente espacio. Tambien se le ha dado una posicion absoluta a la imagen
+ para poder posicionarla al lateral del texto. */
+
+.Section-home{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    position: relative;
+    margin: 20% 10% 0 10%;
+
+    animation: appear 2s ease .5s 1 both;
+
+}
+
+.Section-h1{
+    font-size: 5em;
+    color:#f3bc25;
+    text-align: start;
+    padding: 1rem;
+      
+}
+
+.Section-span{
+    line-height: 1.5625rem;
+    font-size: 1em;
+    font-weight: 700;
+    text-align: start;
+    color: transparent;
+    -webkit-text-stroke: 2px rgb(248, 122, 4);
+    
+    transition: all .5s ease-in-out;
+    
+}
+
+/*Aplica un efecto de desplazamiento que cambia el color del texto a rgb(248, 122, 4) cuando se pasa el cursor sobre el
+elemento. */
+
+.Section-span:hover{
+    color: rgb(248, 122, 4);
+    
+}
+
+.Section-p{
+    font-size: 1.5em;
+    font-weight: 700;
+    text-align: start;
+    color: #f3bc25;
+    
+}
+
+.Section-image{
+   position: absolute;
+   top: 0%;
+   right: 10%;
+   
+}
+/*Establece el ancho al 100% de su contenedor, aplica la propiedad de ajuste de objeto con un valor de cobertura para
+garantizar que la imagen cubra todo el contenedor, agrega un borde sólido de 2 píxeles usando una
+variable CSS personalizada (--border-color), proporciona El elemento tiene un radio de borde del 50%
+para hacerlo circular, aplica un efecto de sombra de cuadro con parámetros específicos y agrega un
+efecto de transición a todas las propiedades con una duración de 0,5 segundos y una función de
+sincronización de entrada y salida. */
+
+.Section-img{
+    width: 100%;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+
+    box-shadow: 0 0 2.5rem 0 rgba(0, 0, 0, .9);
+    transition: all .5s ease-in-out;
+    
+}
+
+/* Aplica un efecto de desplazamiento que escala el elemento 1,1 veces su tamaño original cuando el mouse se desplaza sobre
+él. */
+
+.Section-img:hover{
+    transform: scale(1.1);
+
+}
+
+.isHidden{
+    opacity: 0;
+    filter: blur(5px);
+    transition: all 1s ease;
+    
+}
+
+.isVisible{
+    opacity: 1;
+    filter: blur(0);
+    transition: all 1s ease;
+
+}
+
+/*Fin del Home*/
+
+/* Svg animado con una rotacion de 360º y una ligera sombra exterior*/
+.Svg-middle{
+    width: 40vw;
+    margin: 30% auto;
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(207,137,16,1) 0%, rgba(11,10,10,1) 89%);
+    border-radius: 50%;
+    
+    box-shadow: 1rem 0 5rem .2rem rgba(238, 153, 5, 0.644);
+    
+    animation: spin 10s linear infinite;
+}
+
+
+
+
+/*Inicio de About*/
+
+/*
+-About-section
+-About-h2
+-About-h2:hover
+-About-p
+-About-p--secondary
+-About-image
+-About-img
+-About-img:hover
+
+Establece la propiedad de visualización en flex, lo que permite que los elementos dentro del contenedor se dispongan de forma
+flexible. La propiedad flex-flow está configurada en "ajustar columna", lo que significa que los
+elementos se mostrarán en un diseño de columna y pasarán a la siguiente columna si no hay suficiente
+espacio. Tiene un filtro blur para darle un desenfoque a la animacion que tiene la contenedora principal, 
+que hace que aparezca desde la izquierda de la pagina */
+
+.About-section{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin: 25% 0 0 0;
+
+    position: relative;
+
+}
+
+.About-section.isHidden{
+    opacity: 0;
+    filter: blur(10px);
+    transition: all 1s ease;
+    transform: translateX(-100%);
+}
+
+.About-section.isVisible{
+    opacity: 1;
+    filter: blur(0);
+    transition: all 1s ease;
+    transform: translateX(0);
+}
+
+.About-h2{
+    font-size: 4em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    word-spacing: 1rem;
+    text-align: end;
+    color: var(--text-secondary);
+    margin: 0 10% 2rem 0;
+
+    transition: all .5s ease-in-out;
+
+}
+
+/*Aplica un efecto de desplazamiento. Cuando se pasa el cursor sobre el elemento `h2`, se escalará a 1,1 veces su tamaño
+original y cambiará su color al valor de la propiedad personalizada `--color-primary`. */
+
+.About-h2:hover{
+    transform: scale(1.1);
+    color: var(--color-primary) ;
+
+}
+
+.About-p{
+    width: 50%;
+    font-size: 1.7em;
+    font-weight: 700;
+    text-align: end;
+    color: var(--text-primary);
+    margin: 0 10% 1rem 0;
+
+}
+
+.About-p--secondary{
+    width: 50%;
+    font-size: 1.7em;
+    font-weight: 700;
+    text-align: end;
+    color: var(--text-primary);
+    margin: 0 10% 1.25rem 0;
+
+}
+
+.About-image{
+  position: absolute;
+  top: 5rem;
+  left: 10%;
+
+}
+
+/*Está aplicando un radio de borde del 5%, un borde de 2px sólido con una variable personalizada (--border-color), un efecto
+de sombra de cuadro con propiedades específicas y un efecto de transición en todas las propiedades
+con una duración de 0,5 segundos usando una función de sincronización de entrada y salida fácil. */
+
+.About-img{
+    border-radius: 5%;
+    border: 2px solid var(--border-color) ;
+
+    box-shadow: 0 0 2.5rem 0 rgba(0, 0, 0, .9);
+    transition: all .5s ease-in-out;
+
+}
+
+/* Cuando se pasa el cursor sobre el elemento, se ampliará en un factor de 1,1
+utilizando la propiedad de transformación. Esto hará que el elemento parezca un poco más grande
+cuando pase el mouse sobre él. */
+
+.About-img:hover{
+    transform: scale(1.1);
+
+}
+
+/*Fin de About*/
+
+
+
+
+
+
+/*Inicio de projects*/
+
+
+/*Se les ha dado un estilo para que las etiquetas contenedoras formen una caja en la que introducir dos lineas de texto y puedan introducirse unas imagenes en el centro.
+Se le ha añadido una animacion para que aparezca visible desde un opacidad de 0 a 1 con un ligero desenfoque.
+-Projects
+-Projects-h2
+-Projects-h2
+-Projects-span
+-Projects-images
+-Projects-img
+*/
+.Projects{
+    background-color: var(--bg-color);
+    padding: 1rem;
+    margin: 20% 10%;
+    border-radius: 10px;
+    border: 2px solid var(--border-color);
+
+
+    box-shadow: 0 0 2.5rem 0 rgba(0, 0, 0, .9);
+
+}
+
+
+.Projects-h2{
+    font-size: 4em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    word-spacing: 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+    margin: auto;
+
+    transition: all .5s ease-in-out;
+
+}
+
+/* Aplica un efecto de desplazamiento cuando se pasa el cursor sobre el elemento `h2`, se escalará a 1,1 veces su tamaño
+original y cambiará su color al valor de la variable CSS personalizada `--color-primary`. */
+
+.Projects-h2:hover{
+    transform: scale(1.1);
+    color: var(--color-primary) ;
+}
+
+.Projects-span{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 1.7em;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-primary);
+    margin: auto;
+
+}
+
+.Projects-grid{
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat( auto-fit , minmax (300px , 1fr) );
+    align-items: center;
+    gap: 2rem;
+    margin: 1rem auto;
+
+    box-shadow: 0 0 2.5rem 0 rgba(0, 0, 0, .5);
+
+}
+
+.Projects-img{
+    object-fit:contain;
+    transition: all .5s ease;
+
+}
+
+.Projects-img:hover{
+    transform: scale(.95);
+
+}
+
+.Projects-img:active{
+    transform: scale(1.1);
+
+}
+
+/* Se ha añadido un modulo de lightbox para que cuando se haga click en la imagen del grid, un bloque con opacidad 0 pase a opacidad 1
+, volviendose visible y teniendo la imagen ampliada para verla con mas detalle.*/
+.Projects-lightbox{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    
+    opacity:0;
+    backdrop-filter: blur(2rem);
+    pointer-events: none;
+    transition: all .5s ease;
+
+}
+
+.Projects-lightbox.isActive{
+    opacity: 1;
+    pointer-events: auto;
+
+}
+
+.Projects-btn{
+    width: 2.5rem;
+    background: var(--bg-color-secondary);
+    border-radius: 50%;
+    border: 2px solid;
+    cursor: pointer;
+    transition: all .5s ease;
+
+}
+
+.Projects-btn:hover{
+    transform: scale(.95);
+
+}
+
+.Projects-btn:active{
+    transform: scale(1.1);
+
+}
+
+.Projects-img{
+    width: 100%;
+    margin: auto;
+    box-shadow: 0 0 2.5rem 0 rgba(0, 0, 0, .5);
+
+}
+
+/*Fin de Projects*/
+
+
+
+
+
+
+
+
+/*Aplica estilo a la clase llamada `.Footer` y sus hijas. Está configurando la propiedad
+de visualización en flex, lo que permite que los elementos secundarios se coloquen en un contenedor
+flexible. La propiedad flex-flow establece la dirección del contenedor flexible en columna y ahora,
+lo que significa que los elementos secundarios se apilarán verticalmente y no pasarán a la siguiente
+línea. Se le ha añadido una animacion para que aparezca desde una escala de 0 a su tamaño estandar con scale(0) scale(1) */
+
+.Footer{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+    padding: 2rem;
+
+}
+
+.Footer.isHidden{
+    opacity: 0;
+    filter: blur(10px);
+    transition: all 1s ease;
+    transform: scale(0);
+}
+
+.Footer.isVisible{
+    opacity: 1;
+    filter: blur(0);
+    transition: all 1s ease;
+    transform: scale(1);
+}
+
+
+.Footer-h3{
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-secondary);
+    padding: .5rem;
+
+    transition: all .5s ease-in-out;
+}
+
+/* Tiene como objetivo el estado de desplazamiento de un elemento con la clase
+"Footer-h3". Cuando se pasa el cursor sobre el elemento, se escalará a 1,1 veces su tamaño original
+y cambiará su color al valor de la propiedad personalizada "--color-primary". */
+
+.Footer-h3:hover{
+    transform: scale(1.1);
+    color: var(--color-primary);
+}
+
+
+.Footer-h4{
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 3rem 0;
+
+}
+
+/* Se les aplica un estilo similar a todos los selectores para mantener una forma homogenea en todo el cuerpo del formulario
+-Footer-form 
+-Footer-name
+-Footer-email
+-Footer-consult
+*/
+
+.Footer-form{
+    padding: 2rem;
+    
+}
+
+
+.Footer-name{
+    color: var(--text-color-terciary);
+    background: var(--bg-color-secondary);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 5px solid var(--border-color);
+    margin: 2rem;
+
+    box-shadow: 0 0 2.5rem 0 rgba(0, 0, 0, .9);
+
+}
+
+
+.Footer-email{
+    color: var(--text-color-terciary);
+    background: var(--bg-color-secondary);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 5px solid var(--border-color);
+    margin: 2rem;
+
+    box-shadow: 0 0 2.5rem 0 rgba(0, 0, 0, .9);
+
+}
+
+
+.Footer-consult{
+    color: var(--text-color-terciary);
+    background: var(--bg-color-secondary);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 5px solid var(--border-color);
+    margin: 2rem;
+
+    box-shadow: 0 0 2.5rem 0 rgba(0, 0, 0, .9);
+
+}
+
+.Footer-submit{
+    background: var(--bg-color-secondary);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 5px solid var(--border-color);
+    margin: 2rem auto;
+
+    box-shadow: 0 0 2.5rem 0 rgba(0, 0, 0, .9);
+
+}
+
+/* Se ampliará en un factor de 1,1
+utilizando la propiedad de transformación y el cursor cambiará a un puntero, lo que indica que se
+puede hacer clic en él. */
+
+.Footer-submit:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    
+}
+
+.Footer-ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 5% 0 0 0;
+    
+}
+
+
+.Footer-li{
+    padding: 1.5rem;
+    
+}
+
+.Footer-a{
+    width: 3rem;
+    background: var(--bg-color-secondary);
+    padding: .4rem;
+    border-radius: 50%;
+    border: 3px solid var(--bg-color);
+
+    box-shadow: 0 0 2.5rem 0 rgba(0, 0, 0, .9);
+    transition: all .5s ease-in-out;
+}
+
+/* Aplica una propiedad de transformación para escalar el elemento en un factor de 1,1
+cuando se coloca el cursor sobre él. */
+
+.Footer-a:hover{
+    transform: scale(1.1);
+}
+
+/*Fin del Footer*/
+
+
+
+
+
+
+
+
+/* Inicio de barra de scroll vertical*/
+
+/* Barra de desplazamiento en un navegador web con 15 px de ancho, color con la propiedad personalizada y un fondo negro */
+
+::-webkit-scrollbar{
+    width: 15px;
+    
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--text-primary);
+
+}
+
+::-webkit-scrollbar-track{
+    background-color: rgb(54, 42, 11);
+    width: 2.5rem;
+}
+
+/*Fin de barra de scroll vertical*/
+
+
+
+
+
+
+
+
+/*Inicio de animaciones*/
+
+/* Esta animación hará que un elemento aparezca gradualmente en la pantalla cambiando su opacidad y sus propiedades.
+ El elemento comenzará con una opacidad de 0 y se trasladará Y un 50 % hacia abajo desde
+su posición original, y terminará con una opacidad de 1 y se trasladará Y de nuevo a su posición
+original. */
+
+@keyframes appear{
+    from{
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes spin{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/*Fin de animaciones*/
+
+
+
+
+
+
+
+
+
+/*Inicio de media queries*/
+
+/* 
+- Establece la posición en estática para que las imagenes vuelvan a su posicion original, debajo del texto en los limites de 1650px/1100px de ancho.
+- Agregar un margen superior e inferior de 1,5625rem y un margen izquierdo y derecho del 10%. Section-image, About-image */
+
+@media  (max-width: 1650px){
+    .Section-image{
+        position: static;
+        margin: 1.5625rem 10%;
+       
+    }
+
+
+    .About-image{
+        position: static;
+        margin: 1.5625rem 10%;
+    }
+    
+}
+
+
+@media  (max-width: 1100px){
+    .Section-image{
+        position: static;
+        margin: 1.5625rem auto;
+       
+    }
+
+}
+
+/* Con un ancho máximo de 900 px.
+El tamaño de fuente de los elementos con la clase "Encabezado-a"
+se establece en 1,05 em. Esto permite un diseño responsivo ajustando el tamaño de fuente de los
+elementos especificados cuando el tamaño de la pantalla es inferior a 900 px. */
+
+@media  (max-width: 900px){
+    .Header-a{
+        font-size: 1.05em;
+    }
+}
+
+/* Dirigida a pantallas con un ancho máximo de 600 px.
+Establece el tamaño de fuente en 1,5rem. Esta es una técnica de diseño responsivo para ajustar
+el estilo de elementos específicamente para pantallas más pequeñas para mejorar la experiencia
+general del usuario. */
+
+@media (max-width:600px){
+    .Footer-h4{
+        font-size: 1.5rem;
+
+    }
+}
+
+
+
+/* En pantallas inferiores a 700px de ancho el boton del header aparecera */
+
+@media (max-width:700px){
+
+    .Header-btn{
+        display: block;
+
+    }
+
+    /* "Header-nav" establece su ancho en 100% y su propiedad de visualización en "ninguna". Esto significa que el elemento con la clase
+    "Header-nav" no se mostrará en la página web. */
+
+    .Header-nav{
+        width: 100%;
+        display: none;
+
+    }
+    /* Coloca el flujo del menu en columna para el modo responsive */
+
+    .Header-ul{
+        flex-direction: column;
+        
+    }
+
+    /* Establece una serie de margenes, alineamiento de texto y reduccion del tamaño de la fuente de texto en las distintas secciones
+     para adaptarse al modo responsive y estar centrado.  Header-li , Section-h1 , About-p, About-h2 , About-p--secondary, Projects-h2 , Footer-h4*/
+
+    .Header-li{
+        margin: 1rem 0;
+
+    }
+
+    .Section-h1{
+        margin-top: 3rem;
+
+    }
+
+    .About-p , .About-h2 , .About-p--secondary {
+        margin: 1rem auto;
+        text-align: start;
+
+    }
+    .About-p , .About-p--secondary{
+        font-size: 1.5em
+
+    }
+    .About-h2{
+        font-size: 2.5em;
+        margin-left: 20%;
+
+    }
+    .Projects-h2{
+        font-size: 2.5em;
+
+    }
+    
+    .Footer-h4{
+        font-size: 1.2rem;
+
+    }
+    
+}
+    /*En pantallas inferiores a un ancho de 300px se reducira el tamaño de la fuente de texto y se aplicara un margen al footer, para mejorar la experiencia en movil.*/
+@media (max-width:300px){
+    
+    .Footer-h3{
+        font-size: 2.5rem;
+
+    }
+
+    .Footer-h4{
+        font-size: 1rem;
+
+    }
+
+    .Footer{
+        margin-left: 25%;
+       
+    }
+
+    .Projects-h2{
+        font-size: 1.8em;
+    }
+
+    .Projects-span{
+        font-size: 1em;
+    }
+}
+
+/*Fin de Media queries*/
