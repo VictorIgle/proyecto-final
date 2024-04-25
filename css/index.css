@@ -65,7 +65,7 @@ Tambien se le ha dado una transicion suave al hacer scroll cuando se haga click 
 body{
     font-family: "Kanit", sans-serif;
     scroll-behavior: smooth;
-    background-image: url("/proyecto-final/assets/dark-metal-texture2.webp");
+    background-image: url("/assets/dark-metal-texture2.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -104,7 +104,7 @@ hacerlo mas visible. El boton que contiene al SVG tieen un display none para que
     top: 0;
     left: 0;
     z-index: 1;
-    
+
     box-shadow: 0 0 2.5rem 0 rgba(0, 0, 0, .9);
     
 }
@@ -134,9 +134,10 @@ hacerlo mas visible. El boton que contiene al SVG tieen un display none para que
 
 .Header-nav.isActive{
     margin: 2rem 0 ;
-    display: block;
     height: 50vh;
-    
+
+    opacity: 1;
+    pointer-events: all;
 }
 
 .Header-ul{
@@ -149,7 +150,7 @@ hacerlo mas visible. El boton que contiene al SVG tieen un display none para que
 
 .Header-li{
     margin: 0 .5rem;
-
+    
 }
 
 .Header-a{
@@ -897,11 +898,20 @@ general del usuario. */
     }
 
     /* "Header-nav" establece su ancho en 100% y su propiedad de visualización en "ninguna". Esto significa que el elemento con la clase
-    "Header-nav" no se mostrará en la página web. */
+    "Header-nav" no se mostrará en la página web. Coloca el flujo del menu en columna para el modo responsive */
 
     .Header-nav{
         width: 100%;
-        display: none;
+        height: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        opacity: 0;
+        pointer-events: none;
+
+        transition: all .5s ease-in-out;
 
     }
     /* Coloca el flujo del menu en columna para el modo responsive */
