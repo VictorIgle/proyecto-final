@@ -293,7 +293,7 @@ sincronización de entrada y salida. */
 
 /* Svg animado con una rotacion de 360º y una ligera sombra exterior*/
 .Svg-middle{
-    width: 40vw;
+    width: 30vw;
     margin: 30% auto;
     background: rgb(0,0,0);
     background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(207,137,16,1) 0%, rgba(11,10,10,1) 89%);
@@ -367,7 +367,6 @@ que hace que aparezca desde la izquierda de la pagina */
 original y cambiará su color al valor de la propiedad personalizada `--color-primary`. */
 
 .About-h2:hover{
-    transform: scale(1.1);
     color: var(--color-primary) ;
 
 }
@@ -386,7 +385,6 @@ original y cambiará su color al valor de la propiedad personalizada `--color-pr
 }
 
 .About-h3:hover{
-    transform: scale(1.1);
     color: var(--color-primary);
 }
 
@@ -453,15 +451,18 @@ cuando pase el mouse sobre él. */
 Se le ha añadido una animacion para que aparezca visible desde un opacidad de 0 a 1 con un ligero desenfoque.
 -Projects
 -Projects-h2
--Projects-h2
+-Projects-a
 -Projects-span
+-Projects-lightbox
+-Projects-btn
 -Projects-images
 -Projects-img
 */
 .Projects{
+    width: 50vw;
     background-color: var(--bg-color);
     padding: 1rem;
-    margin: 20% 10%;
+    margin: 20% auto;
     border-radius: 10px;
     border: 2px solid var(--border-color);
 
@@ -488,7 +489,6 @@ Se le ha añadido una animacion para que aparezca visible desde un opacidad de 0
 original y cambiará su color al valor de la variable CSS personalizada `--color-primary`. */
 
 .Projects-h2:hover{
-    transform: scale(1.1);
     color: var(--color-primary) ;
 }
 
@@ -503,21 +503,32 @@ original y cambiará su color al valor de la variable CSS personalizada `--color
     margin: auto;
 
 }
+/*La etiqueta tiene un ligero hover con un aumento de tamaño para indicar visualmente que se puede hacer click en el elemento y asi activar el enlace que lleva hasta el proyecto.*/
+.Projects-a{
+    transition: all .5s ease-in-out;
+   
+}
+
+.Projects-a:hover{
+    color: var(--color-primary);
+    transform: scale(1.1);
+}
+
+
 
 .Projects-grid{
-    width: 50%;
+    width: 90%;
     display: grid;
     grid-template-columns: repeat( auto-fit , minmax (300px , 1fr) );
     align-items: center;
     gap: 2rem;
     margin: 1rem auto;
 
-    
-
 }
 
 .Projects-img{
-    min-height: 25rem;
+    min-height: 250px;
+    min-height: 250px;
     object-fit:contain;
     transition: all .5s ease;
     
@@ -530,7 +541,7 @@ original y cambiará su color al valor de la variable CSS personalizada `--color
 }
 
 .Projects-img:active{
-    transform: scale(1.1);
+    transform: scale(1.2);
     
 
 }
@@ -540,12 +551,13 @@ original y cambiará su color al valor de la variable CSS personalizada `--color
 .Projects-lightbox{
     width: 100%;
     height: 100%;
+    background-color: rgba(0, 0, 0, .5);
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    overflow: hidden;
+    
 
     position: fixed;
     top: 0;
@@ -562,6 +574,8 @@ original y cambiará su color al valor de la variable CSS personalizada `--color
 .Projects-lightbox.isActive{
     opacity: 1;
     pointer-events: auto;
+    transform: scale(1.7);
+    
 
 }
 
@@ -594,7 +608,9 @@ original y cambiará su color al valor de la variable CSS personalizada `--color
 
 .Projects-img{
     width: 100%;
+    height: 100%;
     margin: auto;
+    object-fit: cover;
     box-shadow: 0 0 2.5rem 0 rgba(0, 0, 0, .5);
 
 }
@@ -895,6 +911,9 @@ general del usuario. */
         font-size: 1.5rem;
 
     }
+    .Projects-h2{
+        font-size: 1rem;
+    }
 }
 
 
@@ -972,6 +991,16 @@ general del usuario. */
     }
     
 }
+
+@media (max-width:480px){
+
+    .Projects-h2{
+        font-size: 1.3rem;
+    }
+}
+
+
+
     /*En pantallas inferiores a un ancho de 300px se reducira el tamaño de la fuente de texto y se aplicara un margen al footer, para mejorar la experiencia en movil.*/
 @media (max-width:300px){
     
