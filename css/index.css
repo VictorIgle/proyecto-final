@@ -563,7 +563,7 @@ original y cambiará su color al valor de la variable CSS personalizada `--color
 .Projects-lightbox.isActive{
     opacity: 1;
     pointer-events: auto;
-    transform: scale(1.7);
+    transform: scale(1.4);
     
 
 }
