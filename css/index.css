@@ -448,7 +448,8 @@ cuando pase el mouse sobre él. */
 
 
 /*Se les ha dado un estilo para que las etiquetas contenedoras formen una caja en la que introducir dos lineas de texto y puedan introducirse unas imagenes en el centro.
-Se le ha añadido una animacion para que aparezca visible desde un opacidad de 0 a 1 con un ligero desenfoque.
+Se le ha añadido una animacion para que aparezca visible desde un opacidad de 0 a 1 con un ligero desenfoque. Se ha añadido una contenedora (Projects lightbox) que dentro
+ tendra una imagen que  al hacer click en ella abrira una imagen mas grande con una transicion de opacidad 0 a 1.
 -Projects
 -Projects-h2
 -Projects-a
@@ -503,6 +504,7 @@ original y cambiará su color al valor de la variable CSS personalizada `--color
     margin: auto;
 
 }
+
 /*La etiqueta tiene un ligero hover con un aumento de tamaño para indicar visualmente que se puede hacer click en el elemento y asi activar el enlace que lleva hasta el proyecto.*/
 .Projects-a{
     transition: all .5s ease-in-out;
@@ -513,8 +515,6 @@ original y cambiará su color al valor de la variable CSS personalizada `--color
     color: var(--color-primary);
     transform: scale(1.1);
 }
-
-
 
 .Projects-grid{
     width: 90%;
