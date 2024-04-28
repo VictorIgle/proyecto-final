@@ -537,7 +537,7 @@ original y cambiará su color al valor de la variable CSS personalizada `--color
 
 .Projects-img:hover{
     transform: scale(.95);
-
+    cursor: pointer;
 }
 
 .Projects-img:active{
