@@ -526,11 +526,10 @@ original y cambiará su color al valor de la variable CSS personalizada `--color
 }
 
 .Projects-img{
-    min-height: 250px;
-    min-height: 250px;
-    object-fit:contain;
+    min-height: 450px;
+    min-height: 450px;
+    object-fit:cover;
     transition: all .5s ease;
-    
 
 }
 
