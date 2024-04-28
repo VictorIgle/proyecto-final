@@ -519,7 +519,7 @@ original y cambiará su color al valor de la variable CSS personalizada `--color
 .Projects-grid{
     width: 90%;
     display: grid;
-    grid-template-columns: repeat( auto-fit , minmax (300px , 1fr) );
+    grid-template-columns: repeat( auto-fit , minmax(300px , 1fr) );
     align-items: center;
     gap: 2rem;
     margin: 1rem auto;
@@ -527,16 +527,17 @@ original y cambiará su color al valor de la variable CSS personalizada `--color
 }
 
 .Projects-img{
-    min-height: 450px;
-    min-height: 450px;
-    object-fit:cover;
+    min-height: 250px;
+    min-height: 250px;
+    object-fit:contain;
     transition: all .5s ease;
+    
 
 }
 
 .Projects-img:hover{
     transform: scale(.95);
-
+    cursor: pointer;
 }
 
 .Projects-img:active{
