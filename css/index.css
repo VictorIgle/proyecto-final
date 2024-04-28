@@ -519,7 +519,7 @@ original y cambiará su color al valor de la variable CSS personalizada `--color
 .Projects-grid{
     width: 90%;
     display: grid;
-    grid-template-columns: repeat( auto-fit , minmax( 18.75rem , 1fr) );
+    grid-template-columns: repeat( auto-fit , minmax(300px , 1fr) );
     align-items: center;
     gap: 2rem;
     margin: 1rem auto;
@@ -527,9 +527,9 @@ original y cambiará su color al valor de la variable CSS personalizada `--color
 }
 
 .Projects-img{
-    min-height: 250px;
-    min-height: 250px;
+    width: 50vw;
     object-fit:contain;
+    margin: 0 auto;
     transition: all .5s ease;
     
 
@@ -991,6 +991,8 @@ general del usuario. */
     }
     
 }
+
+
 
 @media (max-width:480px){
 
