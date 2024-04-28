@@ -460,15 +460,9 @@ Se le ha añadido una animacion para que aparezca visible desde un opacidad de 0
 -Projects-img
 */
 .Projects{
-    width: 50vw;
-    background-color: var(--bg-color);
+    width: 70vw;
     padding: 1rem;
     margin: 20% auto;
-    border-radius: 10px;
-    border: 2px solid var(--border-color);
-
-
-    box-shadow: 0 0 2.5rem 0 rgba(0, 0, 0, .9);
 
 }
 
@@ -518,11 +512,16 @@ original y cambiará su color al valor de la variable CSS personalizada `--color
 
 .Projects-grid{
     width: 90%;
+    background-color: var(--bg-color);
     display: grid;
-    grid-template-columns: repeat( auto-fit , minmax (300px , 1fr) );
+    grid-template-columns: repeat( auto-fit , minmax( 18.75rem , 1fr) );
     align-items: center;
     gap: 2rem;
     margin: 1rem auto;
+    border-radius: 10px;
+    border: 2px solid var(--border-color);
+
+    box-shadow: 0 0 2.5rem 0 rgba(0, 0, 0, .9);
 
 }
 
