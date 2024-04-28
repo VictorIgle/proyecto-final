@@ -460,19 +460,8 @@ Se le ha añadido una animacion para que aparezca visible desde un opacidad de 0
 -Projects-img
 */
 .Projects{
-    width: 50vw;
-    background-color: var(--bg-color);
-    padding: 1rem;
-    margin: 20% auto;
-    border-radius: 10px;
-    border: 2px solid var(--border-color);
-
-
-    box-shadow: 0 0 2.5rem 0 rgba(0, 0, 0, .9);
-
+    margin: 30% auto;
 }
-
-
 .Projects-h2{
     font-size: 4em;
     font-weight: 700;
@@ -480,7 +469,7 @@ Se le ha añadido una animacion para que aparezca visible desde un opacidad de 0
     word-spacing: 1rem;
     text-align: center;
     color: var(--text-secondary);
-    margin: auto;
+    margin:0 auto;
 
     transition: all .5s ease-in-out;
 
@@ -501,7 +490,7 @@ original y cambiará su color al valor de la variable CSS personalizada `--color
     font-weight: 700;
     text-align: center;
     color: var(--text-primary);
-    margin: auto;
+    margin:0 auto;
 
 }
 
@@ -530,8 +519,8 @@ original y cambiará su color al valor de la variable CSS personalizada `--color
     width: 50vw;
     object-fit:contain;
     margin: 0 auto;
+
     transition: all .5s ease;
-    
 
 }
 
@@ -611,7 +600,8 @@ original y cambiará su color al valor de la variable CSS personalizada `--color
     height: 100%;
     margin: auto;
     object-fit: cover;
-    box-shadow: 0 0 2.5rem 0 rgba(0, 0, 0, .5);
+
+   
 
 }
 
@@ -990,9 +980,6 @@ general del usuario. */
 
     }
 
-    .Projects-img{
-        max-width:  250px;
-    }
     
 }
 
@@ -1000,7 +987,7 @@ general del usuario. */
 @media (max-width:480px){
 
     .Projects-h2{
-        font-size: 1.3rem;
+        font-size: 1.9rem;
     }
 }
 
